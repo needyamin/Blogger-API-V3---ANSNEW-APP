@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:background="@color/white"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="The Page Title"
+        android:textColor="@color/twitter"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/publishInfoTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTv"
+        android:layout_alignBottom="@+id/titleTv"
+        android:layout_marginBottom="-19dp"
+        android:text=" "
+        android:textColor="@color/gary1" />
+
+
+    <ImageView
+        android:id="@+id/imageIv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/publishInfoTv"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:adjustViewBounds="true"
+        android:background="@color/gary1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_image_black"/>
+
+
+    <TextView
+        android:id="@+id/descriptionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/publishInfoTv"
+        android:layout_toEndOf="@+id/imageIv"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:justificationMode="inter_word"
+        android:text="The Description of the page, 4 lines only"
+        android:textColor="@color/black"/>
+
+
+</RelativeLayout>
