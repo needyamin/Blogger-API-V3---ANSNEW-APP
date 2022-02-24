@@ -5,8 +5,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import com.onesignal.OneSignal;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -49,18 +52,28 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MAIN_TAG";
 
     private ActionBar actionBar;
+    private static final String ONESIGNAL_APP_ID = "86cebf10-719f-4b57-8f6b-f510ffa48617";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        actionBar = getSupportActionBar();
-        actionBar.setTitle("ANSNEW TECH.");
-        actionBar.setSubtitle("Posts");
+        // Enable verbose OneSignal logging to debug issues if needed.
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
 
+
+        actionBar = getSupportActionBar();
+        actionBar.setTitle("ANSNEW.COM");
+        actionBar.setSubtitle("Homepage");
+
+
+        //icon Menu back button
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        //actionBar.setDisplayHomeAsUpEnabled(true);
 
         postsRv = findViewById(R.id.postsRV);
         loadMorebtn= findViewById(R.id.loadMorebtn);
@@ -68,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         searchBtn = findViewById(R.id.searchBtn);
 
         progressDialog= new ProgressDialog(this);
-        progressDialog.setTitle("Please wait....");
+        //progressDialog.setTitle("Please wait....");
 
 
         postArrayList = new ArrayList<>();
@@ -320,9 +333,27 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d(TAG,"onErrorResponse:"+error.getMessage());
-                Toast.makeText(MainActivity.this,""+error.getMessage(),Toast.LENGTH_SHORT).show();
+
+                //Message For No Internet Start
+
+
+                //Log.d(TAG,"onErrorResponse:"+error.getMessage());
+                //Toast.makeText(MainActivity.this,""+error.getMessage(),Toast.LENGTH_SHORT).show();
+                //Message for ERROR INTERNET
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Internet not available. Cross check your internet connectivity")
+                        .setCancelable(false)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+
+                            }
+                        }).show();
+
                 progressDialog.dismiss();
+              //Message for ERROR INTERNET END
 
             }
         });
@@ -331,6 +362,7 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    //Homepage Menu Pages
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main,menu);

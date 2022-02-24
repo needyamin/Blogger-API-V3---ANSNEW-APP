@@ -4,7 +4,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -123,9 +125,23 @@ public class PageActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d(TAG, "onErrorResponse: "+error.getMessage());
+                //Log.d(TAG, "onErrorResponse: "+error.getMessage());
                 progressDialog.dismiss();
-                Toast.makeText(PageActivity.this,""+error.getMessage(),Toast.LENGTH_SHORT).show();
+                ///////////start No internet////////////
+                new AlertDialog.Builder(PageActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Internet not available. Cross check your internet connectivity")
+                        .setCancelable(false)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+
+                            }
+                        }).show();
+                ///////////End No Internet////////////
+
+                //Toast.makeText(PageActivity.this,""+error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
 

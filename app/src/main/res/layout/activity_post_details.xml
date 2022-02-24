@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="The title of the post"
+            android:text="********************"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"/>
@@ -30,7 +30,7 @@
             android:id="@+id/publishInfoTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="By AnsNew Tech."
+            android:text="********"
             android:textColor="@color/gary1"/>
 
         <WebView
@@ -54,7 +54,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/labelsRv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:spanCount="3"

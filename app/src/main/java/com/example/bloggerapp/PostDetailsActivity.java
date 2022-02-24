@@ -4,6 +4,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebChromeClient;
@@ -54,7 +56,7 @@ public class PostDetailsActivity extends AppCompatActivity {
 
         actionBar = getSupportActionBar();
 
-        actionBar.setTitle("Post Details");
+        actionBar.setTitle("Article Details");
 
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -105,7 +107,8 @@ public class PostDetailsActivity extends AppCompatActivity {
 
                     String gmtDate = published;
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd'T'HH:mm:ss");
-                    SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy K:mm a");
+                    //SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy K:mm a");
+                    SimpleDateFormat dateFormat2 = new SimpleDateFormat("EEE, d MMM, yyyy");
                     String formattedDate = "";
                     try {
                         Date date = dateFormat.parse(gmtDate);
@@ -116,7 +119,8 @@ public class PostDetailsActivity extends AppCompatActivity {
                     }
                     actionBar.setSubtitle(title);
                     titleTv.setText(title);
-                    publishInfoTv.setText("By "+displayName+" "+formattedDate);
+                    //publishInfoTv.setText("By "+displayName+" "+formattedDate);
+                    publishInfoTv.setText("Posted On "+formattedDate);
 
                     webView.loadDataWithBaseURL(null,content,"text/html", ENCODING,null);
 
@@ -154,6 +158,21 @@ public class PostDetailsActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
                 Toast.makeText(PostDetailsActivity.this,""+error.getMessage(),Toast.LENGTH_SHORT).show();
+                ///////////start No internet////////////
+                new AlertDialog.Builder(PostDetailsActivity.this)
+                        .setTitle("Error")
+                        .setMessage("Internet not available. Cross check your internet connectivity")
+                        .setCancelable(false)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+
+                            }
+                        }).show();
+                ///////////End No Internet////////////
+
+
             }
         });
 
@@ -213,7 +232,6 @@ public class PostDetailsActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d(TAG_COMMENTS,"onErrorResponse: "+error.getMessage());
-
 
 
             }

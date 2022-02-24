@@ -13,6 +13,11 @@
         android:theme="@style/Theme.BloggerApp"
         android:usesCleartextTraffic="true">
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544/6300978111"/>
+
+
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".PageDetailsActivity" />
         <activity android:name=".PageActivity" />

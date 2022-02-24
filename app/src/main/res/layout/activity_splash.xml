@@ -7,15 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="182dp"
         android:layout_height="187dp"
         android:layout_centerInParent="true"
         android:src="@drawable/ansnewlogo" />
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,9 +23,7 @@
         android:text="AnsNew Tech."
         android:textStyle="normal"
         android:textColor="#cdcdcd"
-        android:textSize="18sp" />
-
-
+        android:textSize="15sp" />
 
     <ProgressBar
         android:id="@+id/progressbar"

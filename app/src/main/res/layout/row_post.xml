@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleTv"
         android:text="By Yamin Hossain Shohan"
-        android:textColor="@color/gary2"/>
+        android:textColor="@color/gary2" />
 
     <ImageView
         android:id="@+id/imageIv"
@@ -52,8 +52,5 @@
         android:textColor="@color/black"
         android:maxLines="4"
         android:ellipsize="end"/>
-
-
-
 
 </RelativeLayout>

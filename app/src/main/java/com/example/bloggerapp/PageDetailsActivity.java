@@ -39,7 +39,7 @@ public class PageDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_page_details);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Android Tutorials");
+        actionBar.setTitle("ANSNEW.COM");
 
         actionBar.setSubtitle("Page Details");
         actionBar.setDisplayShowHomeEnabled(true);
@@ -83,7 +83,8 @@ public class PageDetailsActivity extends AppCompatActivity {
 
                     String gmtDate = published;
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd'T'HH:mm:ss");
-                    SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy K:mm a");
+                    //SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy K:mm a");
+                    SimpleDateFormat dateFormat2 = new SimpleDateFormat("EEE, d MMM, yyyy");
                     String formattedDate = "";
                     try {
                         Date date = dateFormat.parse(gmtDate);
@@ -94,7 +95,8 @@ public class PageDetailsActivity extends AppCompatActivity {
                     }
 
                     titleTv.setText(title);
-                    publishInfoTv.setText("By "+displayName+""+formattedDate);
+                    //publishInfoTv.setText("By "+displayName+" "+formattedDate);
+                    publishInfoTv.setText("Posted On "+formattedDate);
 
 
                     webView.loadDataWithBaseURL(null,content,"text/html", ENCODING,null);

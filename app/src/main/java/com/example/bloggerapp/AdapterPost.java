@@ -68,7 +68,8 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.HolderPost> {
 
         String gmtDate = published;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd'T'HH:mm:ss");
-        SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy K:mm a");
+        //SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy K:mm a");
+        SimpleDateFormat dateFormat2 = new SimpleDateFormat("EEE, d MMM, yyyy");
         String formattedDate = "";
         try {
             Date date = dateFormat.parse(gmtDate);
