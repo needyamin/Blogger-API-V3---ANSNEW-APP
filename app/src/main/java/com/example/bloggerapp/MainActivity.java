@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MAIN_TAG";
 
     private ActionBar actionBar;
-    private static final String ONESIGNAL_APP_ID = "86cebf10-719f-4b57-8f6b-f510ffa48617";
+    private static final String ONESIGNAL_APP_ID = "*****************";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
