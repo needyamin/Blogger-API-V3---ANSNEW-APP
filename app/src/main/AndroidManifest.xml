@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bloggerapp">
+    package="com.needyamin.bloggerapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <uses-permission android:name=
+        "com.samsung.accessory.permission.ACCESSORY_FRAMEWORK" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+
 
     <application
         android:allowBackup="true"
@@ -18,12 +24,13 @@
             android:value="ca-app-pub-3940256099942544/6300978111"/>
 
 
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".PageDetailsActivity" />
-        <activity android:name=".PageActivity" />
-        <activity android:name=".PostDetailsActivity" />
 
-        <activity android:name=".SplashActivity"
+        <activity android:name="com.needyamin.bloggerapp.MainActivity"></activity>
+        <activity android:name="com.needyamin.bloggerapp.PageDetailsActivity" />
+        <activity android:name="com.needyamin.bloggerapp.PageActivity" />
+        <activity android:name="com.needyamin.bloggerapp.PostDetailsActivity" />
+
+        <activity android:name="com.needyamin.bloggerapp.SplashActivity"
             android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

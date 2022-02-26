@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gary0"
-    tools:context=".PostDetailsActivity">
+    tools:context="com.needyamin.bloggerapp.PostDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#FDFDFD"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    tools:context="com.needyamin.bloggerapp.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"

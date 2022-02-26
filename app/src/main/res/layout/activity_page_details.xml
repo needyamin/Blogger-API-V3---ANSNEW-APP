@@ -11,7 +11,7 @@
     android:layout_height="match_parent"
     android:background="@color/gary0"
     android:orientation="vertical"
-    tools:context=".PageDetailsActivity">
+    tools:context="com.needyamin.bloggerapp.PageDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
