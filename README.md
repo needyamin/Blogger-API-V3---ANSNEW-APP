@@ -18,6 +18,8 @@
 
 > Enjoy!
 
+> How to build this app? See this video: https://youtu.be/Ay8i7pQBOD4
+
 For more information, please send your query at needyamin@ansnew.com
 
 # Download Demo Apps?
