@@ -2,9 +2,9 @@
 > Blogger API V3 - ANSNEW APP
 
 # screenshots
-![Screenshot_2022-02-25-00-25-18](https://user-images.githubusercontent.com/16277392/155604145-3629464c-38ad-4cb5-9373-89a8e0efeb54.png)
-![Screenshot_2022-02-25-00-25-27](https://user-images.githubusercontent.com/16277392/155604154-15f53017-9232-4145-b1ce-bc78838efee8.png)
-![Screenshot_2022-02-25-00-25-55](https://user-images.githubusercontent.com/16277392/155604156-a08265cd-b592-455e-adf9-af252d7da86d.png)
+![Loading](https://user-images.githubusercontent.com/16277392/155894297-782bec61-685a-4940-9214-73a9e4ed95e7.png)
+![homepage](https://user-images.githubusercontent.com/16277392/155894295-e5d34c5a-ef48-4daa-a8f0-f0b680287de7.png)
+![No_Internet](https://user-images.githubusercontent.com/16277392/155894298-c45eb62d-4d07-4843-b418-d3057aa61e1a.png)
 
 
 # How to use this?
