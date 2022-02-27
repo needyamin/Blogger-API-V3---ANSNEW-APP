@@ -20,6 +20,8 @@
 
 > How to build this app? See this video: https://youtu.be/Ay8i7pQBOD4
 
+If you want to use onesignal push notification then please replace onesignal key. You will find onesignal key option on MainActivity.java file.
+
 For more information, please send your query at needyamin@ansnew.com
 
 # Download Demo Apps?
